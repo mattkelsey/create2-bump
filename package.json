@@ -1,0 +1,17 @@
+{
+  "name": "matt-roomba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create2": "^1.2.3",
+    "lodash": "^4.17.4",
+    "node.extend": "^2.0.0",
+    "serialport": "^4.0.7"
+  }
+}
