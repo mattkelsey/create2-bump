@@ -8,7 +8,6 @@ create.open("/dev/ttyUSB0", function(robot) {
     robot.driveSpeed(s, s);
     
     robot.onChange = function(changed) {
-        console.log(changed);
 	if(changed.bumpLeft && robot.data.bumpRight == true && changed.bumpRight && robot.data.bumpLeft == true || robot.data.cliffFrontRaw == true) {
             console.log("left");
 	    robot.driveSpeed(s, -s); // +-
