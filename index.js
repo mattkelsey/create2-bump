@@ -4,7 +4,7 @@ var s = 200; //speed
 var t = 1000; //time for which to turn
 
 create.open("/dev/ttyUSB0", function(robot) {
-    robot.full();
+    robot.safe();
     robot.driveSpeed(s, s);
     
     robot.onChange = function(changed) {
