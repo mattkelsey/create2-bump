@@ -8,15 +8,15 @@ create.open("/dev/ttyUSB0", function(robot) {
     robot.driveSpeed(s, s);
     
     robot.onChange = function(changed) {
-	if(changed.bumpLeft && robot.data.bumpRight == true && changed.bumpRight && robot.data.bumpLeft == true || robot.data.cliffFrontRaw == true) {
+	if(changed.bumpLeft && robot.data.bumpRight == true && changed.bumpRight && robot.data.bumpLeft == true) {
             console.log("left");
 	    robot.driveSpeed(s, -s); // +-
 	    setTimeout(() => { robot.driveSpeed(s, s); console.log("returning straight"); }, t);
-        } else if (changed.bumpRight && robot.data.bumpRight == true || robot.data.cliffFrontRightRaw == true || robot.data.cliffRightRaw == true) {
+        } else if (changed.bumpRight && robot.data.bumpRight == true) {
 	    robot.driveSpeed(-s, s); // - +
 	    setTimeout(() => { robot.driveSpeed(s, s); console.log("returning straight"); }, t);
-	} else if (changed.bumpLeft && robot.data.bumpLeft == true || robot.data.cliffFrontLeftRaw == true || robot.data.cliffLeftRaw == true) {
-	    robot.driveSpeed(-s, s);
+	} else if (changed.bumpLeft && robot.data.bumpLeft == true) {
+	    robot.driveSpeed(s, -s);
             setTimeout(() => { robot.driveSpeed(s, s) }, t*1.5);
 	}
     };
